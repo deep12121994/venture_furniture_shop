@@ -46,6 +46,8 @@ const removeTmp = (path) =>{
     })
 }
 
+
+
 // delete the image on clodinary
 
 exports.deleteImage = (req,res) => {

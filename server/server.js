@@ -21,10 +21,10 @@ require('./model/index');
 app.use('/user', require('./routes/userRoute'));
 app.use('/api', require('./routes/categoryRoute'));
 app.use('/api', require('./routes/imageRoute'));
-
+app.use('/api', require('./routes/productRoute'));
 
 app.get('/',(req,res) => {
-    res.json({msg: 'Welcome'});
+    res.json({msg: 'Welcome to my Shopping portal!!!'});
 })
 
 app.listen(PORT, () => {

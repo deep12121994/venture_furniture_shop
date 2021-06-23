@@ -45,3 +45,24 @@ const removeTmp = (path) =>{
         if(err) throw err;
     })
 }
+
+// delete the image on clodinary
+
+exports.deleteImage = (req,res) => {
+    try {
+        const {public_id} = req.body;
+
+        console.log(req.body);
+
+        if(!public_id) return res.status(400).json({msg: 'No images selected'})
+
+        cloudinary.v2.uploader.destroy(public_id, async(err, result) => {
+            if(err) throw err;
+
+            res.json({msg: 'Deleted image'})
+        })
+
+    } catch(err) {
+        return res.status(500).json({msg: err.message})
+    }
+}

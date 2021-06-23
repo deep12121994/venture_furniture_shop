@@ -20,6 +20,7 @@ require('./model/index');
 
 app.use('/user', require('./routes/userRoute'));
 app.use('/api', require('./routes/categoryRoute'));
+app.use('/api', require('./routes/imageRoute'));
 
 
 app.get('/',(req,res) => {
